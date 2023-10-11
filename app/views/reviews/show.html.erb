@@ -1,0 +1,16 @@
+<h1><%= @review.report_title%> </h1>
+<div class='show-body'>
+  <ul>
+    <li><p>Student Name: <%= @review.student_name%> </p></li>
+    <li><p>Bio Category: <%= @review.bio%> </p></li>
+  </ul>
+<div>
+
+<%= button_to "Edit", edit_review_path(@review), method: :get%>
+<%= button_to "Delete", review_path(@review), method: :delete, data: {
+    turbo_method: :delete,
+    turbo_confirm: "Are you sure?"
+    } %>
+<%= button_to "Home", root_path, method: :get %>
+
+

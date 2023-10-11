@@ -1,0 +1,66 @@
+<%= form_with model: review do |form| %>
+
+  <div class='title-form'>
+Review Type: <%= selected_title = form.select :report_title,
+      {
+        "Form Type" => [ ["Resume"], ["LinkedIn"], ["Portfolio"], ["Cover Page"], ["Github"] ]
+      } %>
+  <div><br>
+
+
+  <div >
+    <%=form.label :student_name%><br>
+    <%= form.text_field :student_name%>
+      <%review.errors.full_messages_for(:student_name).each do |message|%>
+    <div><%= message %></div>
+    <% end %>
+  </div><br>
+
+
+  <div class='title-form'>
+    Bio: <%= category1 = form.select :bio,
+      {
+        "Form Type" => [ ["1 - Lacking or too generic", "1"], ["2 - Specifies role but no tech listed", "2"], ["3 - Specifies role and lists some tech", "3"], ["4 - Specific role and tech listed; mirrors LinkedIn profile", "4"], ["5 - Precise and detailed, fuly mirrors LinkedIn profile", "5"]  ]
+      },
+      selected: "RS" %>
+  <div><br>
+
+  <div class='title-form'>
+    Profile Image: <%= category2 = form.select :profile_image,
+      {
+        "Form Type" => [ ["1 - Lacking or too generic", "1"], ["2 - Specifies role but no tech listed", "2"], ["3 - Specifies role and lists some tech", "3"], ["4 - Specific role and tech listed; mirrors LinkedIn profile", "4"], ["5 - Precise and detailed, fuly mirrors LinkedIn profile", "5"]  ]
+      },
+      selected: "RS" %>
+  <div><br>
+
+  <div class='title-form'>
+    Pinned Repositories: <%= category2 = form.select :pinned_repositories,
+      {
+        "Form Type" => [ ["1 - Lacking or too generic", "1"], ["2 - Specifies role but no tech listed", "2"], ["3 - Specifies role and lists some tech", "3"], ["4 - Specific role and tech listed; mirrors LinkedIn profile", "4"], ["5 - Precise and detailed, fuly mirrors LinkedIn profile", "5"]  ]
+      },
+      selected: "RS" %>
+  <div><br>
+
+  <div class='title-form'>
+    Contributions: <%= category2 = form.select :contributions,
+      {
+        "Form Type" => [ ["1 - Lacking or too generic", "1"], ["2 - Specifies role but no tech listed", "2"], ["3 - Specifies role and lists some tech", "3"], ["4 - Specific role and tech listed; mirrors LinkedIn profile", "4"], ["5 - Precise and detailed, fuly mirrors LinkedIn profile", "5"]  ]
+      },
+      selected: "RS" %>
+  <div><br>
+
+  <div class='title-form'>
+    Repository List: <%= category2 = form.select :repository_list,
+      {
+        "Form Type" => [ ["1 - Lacking or too generic", "1"], ["2 - Specifies role but no tech listed", "2"], ["3 - Specifies role and lists some tech", "3"], ["4 - Specific role and tech listed; mirrors LinkedIn profile", "4"], ["5 - Precise and detailed, fuly mirrors LinkedIn profile", "5"]  ]
+      },
+      selected: "RS" %>
+  <div><br>
+
+  <div>
+    <%=form.submit%>
+  </div>
+
+
+<% end %>
+    <%= button_to "Cancel", root_path, method: :get %>

@@ -1,0 +1,10 @@
+<%= form_with model: review do |form| %>
+  <div>
+    <%=form.label :cat_name%><br>
+    <%= form.text_field :student_name%>
+      <%review.errors.full_messages_for(:student_name).each do |message|%>
+    <div><%= message %></div>
+    <% end %>
+  </div><br>
+
+<%end%>

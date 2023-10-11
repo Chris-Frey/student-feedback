@@ -1,0 +1,30 @@
+
+<h1>Reviews</h1>
+
+<div class="table-container">
+  <table>
+    <thead>
+      <tr>
+        <th>Student Name</th>
+        <th>Review Category</th>
+        <th>Cohort</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <% @reviews.each do |review| %>
+      <tbody>
+      <tr>
+        <td>
+          <%= link_to review.student_name, review %>
+        </td><td>
+          <%= link_to review.report_title, review %>
+        </td>
+      </tr>
+      </tbody>
+    <% end %>
+
+  </table>
+</div>
+
+<%= button_to "New Review", new_review_path, method: :get %>
+<%== pagy_nav(@pagy) if @pagy.pages > 1 %>
